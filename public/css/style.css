@@ -1,0 +1,24 @@
+.my{
+    color: #00ABFF;
+    background-color: #00FFAA;
+}
+form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+placeholder{
+   color: #AB0F00;
+}
+.le{
+    color: #aaffff;
+    width: 60px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.ri{
+    float: right;
+    width: 400px;
+    color: #008800;
+    background-color: #55ffff;
+}
