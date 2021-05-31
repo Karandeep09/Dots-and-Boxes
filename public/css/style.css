@@ -22,3 +22,23 @@ placeholder{
     color: #008800;
     background-color: #55ffff;
 }
+footer{
+    margin-bottom: 50px;
+}
+body{
+    margin-top: 20px;
+}
+.para{
+    width: 250px;
+    background-color: #fdd;
+    margin: 0 auto;
+}
+@media screen and (min-width: 500px) {  
+    a {  
+        display: none;  
+    }  
+} 
+p{
+    color: #000;
+    text-align: center;
+}

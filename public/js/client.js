@@ -5,6 +5,10 @@ console.log(socket);
 var name = getQueryVariable("name") || 'Anonymous';
 var room = getQueryVariable("room") || 'No Room Selected';
 // fires when client successfully conencts to the server
+$("#rno").html("Room Code: "+room);
+var message = "Hi, I am playing Dots and Boxes"+"\r\n"+"https://www.dotboxes.herokuapp.com"+"\r\n"+"Join using "+`Room Code: ${room}`
+message = window.encodeURIComponent(message);
+$("#wapp").attr("href",`whatsapp://send?text=${message}`);
 var sid;
 //var users;
 var admin = 0;
@@ -106,6 +110,7 @@ socket.on('play',(id)=>{
     $("#btn1").css("display","none");
   } 
   Game.curr = id; //current chance player
+  $(".para").css("display","none");
 });
 
 
@@ -118,12 +123,13 @@ socket.on("display",(arr)=>{
     });
     $(".players").empty();
     $(".players").append(items.join(''));
-      if(items.length == 1){
-        document.getElementById("btn").style.display = "inline";
-        admin = 1;
-      } 
+       
       //joined = arr;
       Game = new game(arr);
+      if(sid == Game.root){
+        document.getElementById("btn").style.display = "inline";
+        admin = 1;
+      }
     }
     else{
       //users = arr;
@@ -140,4 +146,3 @@ socket.on("left",(id)=>{
    if(x != null)
     x.style.color = "#aa0000";
 });
-

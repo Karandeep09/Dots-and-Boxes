@@ -16,8 +16,14 @@ app.get('/page',(req,res)=>{
     //console.log(req.query);
     res.sendFile(__dirname+"/public/page.html");
 });
+
 var clientInfo = {};
 var active = {};
+
+app.get('/online',(req,res)=>{
+  res.json({Online :Object.keys(clientInfo).length});
+});
+
 function getuser(room)
 {
     var user = {};
@@ -43,6 +49,9 @@ io.on("connection", function(socket) {
           );
         }
         else{
+            req.room = '000000000';
+            clientInfo[socket.id] = req;
+            socket.join(req.room);
             socket.emit("msg","Can't join, game is already running");
         }
       });
@@ -71,7 +80,7 @@ io.on("connection", function(socket) {
     });
     socket.on('play',(player)=>{
       io.in(player.room).emit("play",player.id);
-      console.log(player.name);
+      //console.log(player.name);
     });
 });
 
