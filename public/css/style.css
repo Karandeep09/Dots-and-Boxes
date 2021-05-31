@@ -20,7 +20,6 @@ placeholder{
     float: right;
     width: 400px;
     color: #008800;
-    background-color: #55ffff;
 }
 footer{
     margin-bottom: 50px;
@@ -41,4 +40,9 @@ body{
 p{
     color: #000;
     text-align: center;
+}
+li{
+    margin: 5px;
+    background-color: #aff;
+    list-style-type: none;
 }

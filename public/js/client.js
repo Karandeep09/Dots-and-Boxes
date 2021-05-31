@@ -85,7 +85,16 @@ function game(players)
         this.next(id);
       }
       delete this.circular[id];
+      this.inactive(id);
       console.log("Deleted",this.circular);
+  }
+  this.active = function(id)
+  {
+    $("#"+id).css("border","2px solid green");
+  }
+  this.inactive = function(id)
+  {
+    $("#"+id).css("border","none");
   }
 }
 
@@ -110,6 +119,8 @@ socket.on('play',(id)=>{
     $("#btn1").css("display","none");
   } 
   Game.curr = id; //current chance player
+  Game.inactive(Game.circular[id].prev);
+  Game.active(id);
   $(".para").css("display","none");
 });
 
