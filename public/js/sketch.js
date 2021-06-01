@@ -1,5 +1,3 @@
-const { text } = require("express");
-
 var arr = [];
 var vert = {};
 var horz = {};
