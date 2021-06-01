@@ -17,7 +17,7 @@ placeholder{
     margin-top: 50px;
 }
 .ri{
-    float: right;
+    margin: 0 auto;
     width: 400px;
     color: #008800;
 }
@@ -45,4 +45,10 @@ li{
     margin: 5px;
     background-color: #aff;
     list-style-type: none;
+}
+#canvas{
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 245px;
+    height: 245px;
 }

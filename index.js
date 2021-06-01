@@ -82,5 +82,11 @@ io.on("connection", function(socket) {
       io.in(player.room).emit("play",player.id);
       //console.log(player.name);
     });
+    socket.on('horz',(data)=>{
+      io.in(clientInfo[data.sid].room).emit('horz',data);
+    });
+    socket.on('vert',(data)=>{
+      io.in(clientInfo[data.sid].room).emit('vert',data);
+    });
 });
 

@@ -30,7 +30,7 @@ socket.on("connect", function() {
 
 socket.on("start",(user)=>{
   start = 1;
-  alert("Hi");
+  //alert("Hi");
   //users = user
   //console.log(users);
 });
@@ -111,13 +111,14 @@ $(document).ready(function(){
 });
 
 socket.on('play',(id)=>{
-  if(sid == id)
-  {
-    $("#btn1").css("display","inline");
-  }
-  else {
-    $("#btn1").css("display","none");
-  } 
+  $("#canvas").css("display","block");
+  // if(sid == id)
+  // {
+  //   $("#btn1").css("display","inline");
+  // }
+  // else {
+  //   $("#btn1").css("display","none");
+  // } 
   Game.curr = id; //current chance player
   Game.inactive(Game.circular[id].prev);
   Game.active(id);
