@@ -19,9 +19,9 @@ function setBox(x,y,ch)
   }
   //fill(255,255,255);
   textSize(16);
-  text(Box[x+" "+y],x-10,y+10);
+  //text(Box[x+" "+y],x-10,y+10);
   if(Box[x+" "+y] == 4){
-  //text(ch,x-10,y+10);
+    text(ch,x-10,y+10);
     return true;
   }
   else{
