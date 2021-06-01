@@ -6,7 +6,7 @@ var name = getQueryVariable("name") || 'Anonymous';
 var room = getQueryVariable("room") || 'No Room Selected';
 // fires when client successfully conencts to the server
 $("#rno").html("Room Code: "+room);
-var message = "Hi, I am playing Dots and Boxes"+"\r\n"+"https://www.dotboxes.herokuapp.com"+"\r\n"+"Join using "+`Room Code: ${room}`
+var message = "Hi, I am playing Dots and Boxes"+"\r\n"+"https://dotboxes.herokuapp.com"+"\r\n"+"Join using "+`Room Code: ${room}`
 message = window.encodeURIComponent(message);
 $("#wapp").attr("href",`whatsapp://send?text=${message}`);
 var sid;
