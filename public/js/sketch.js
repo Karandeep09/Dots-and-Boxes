@@ -88,7 +88,7 @@ function mousePressed()
        if( x >= +h[0] + 10 && x <= +h[2] - 10 && y >= +h[1] - 10 && y <= +h[1] + 10)
          {
            if(horz[key] == 0){
-             socket.emit('horz',{h:h,sid:sid,horz:horz,key:key});
+             socket.emit('horz',{h:h,sid:sid,key:key});
            }
          }
          
@@ -100,7 +100,7 @@ function mousePressed()
          {
            //console.log(v[0],v[1],v[2],v[3]);
            if(vert[key] == 0){ 
-               socket.emit('vert',{v:v,sid:sid,vert:vert,key:key});
+               socket.emit('vert',{v:v,sid:sid,key:key});
            }
          }
          
@@ -116,7 +116,7 @@ function mousePressed()
     if(p | q){}
     else
     Game.next(Game.curr);
-    data.horz[data.key] = 1;
+    horz[data.key] = 1;
   });
   socket.on('vert',(data)=>{
     createLine(data.v[0],data.v[1],data.v[2],data.v[3]);
@@ -128,7 +128,7 @@ function mousePressed()
     if(p | q){}
     else
     Game.next(Game.curr);
-    data.vert[data.key] = 1;
+    vert[data.key] = 1;
   }); 
 function draw() {
   //background(220);
