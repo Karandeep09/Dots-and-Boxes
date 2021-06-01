@@ -100,10 +100,15 @@ function game(players)
 
 $(document).ready(function(){
   $("#btn").click(function(){
+     if(Object.keys(Game.circular).length != 1){
      start = 1;
      $("#btn").css("display","none");
      socket.emit('start',room);
      socket.emit('play',Game.circular[sid]);
+     }
+     else{
+       alert("Atleast 2 players required");
+     }
   });
   $("#btn1").click(function(){
       Game.next(sid);
@@ -122,7 +127,7 @@ socket.on('play',(id)=>{
   Game.curr = id; //current chance player
   Game.inactive(Game.circular[id].prev);
   Game.active(id);
-  $(".para").css("display","none");
+  $(".para").html("Playing as "+Game.circular[sid].name);
 });
 
 
