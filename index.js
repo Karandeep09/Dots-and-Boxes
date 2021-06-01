@@ -1,5 +1,4 @@
 const PORT = process.env.PORT || 3000;
-const { urlencoded } = require("express");
 const express = require("express");
 const app = express();
 const http = require("http").Server(app);
