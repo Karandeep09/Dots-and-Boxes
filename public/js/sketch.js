@@ -88,7 +88,8 @@ function mousePressed()
        if( x >= +h[0] + 10 && x <= +h[2] - 10 && y >= +h[1] - 10 && y <= +h[1] + 10)
          {
            if(horz[key] == 0){
-             socket.emit('horz',{h:h,sid:sid,key:key});
+             socket.emit('horz',{h:h,sid:sid,key:key}); 
+             horz[key] = 1;
            }
          }
          
@@ -101,6 +102,7 @@ function mousePressed()
            //console.log(v[0],v[1],v[2],v[3]);
            if(vert[key] == 0){ 
                socket.emit('vert',{v:v,sid:sid,key:key});
+               vert[key] = 1;
            }
          }
          
