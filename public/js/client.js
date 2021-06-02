@@ -49,7 +49,7 @@ function game(players)
   this.last = '';
   this.curr = '';
   Object.keys(players).forEach((pl)=>{
-     
+      players[pl].score = 0;
       this.circular[pl] = players[pl];
         if(this.prev == '')
         {

@@ -22,6 +22,8 @@ function setBox(x,y,ch)
   //text(Box[x+" "+y],x-10,y+10);
   if(Box[x+" "+y] == 4){
     text(ch,x-10,y+10);
+    $("#"+Game.curr).find("span").empty();
+    $("#"+Game.curr).append('<span>'+(++Game.circular[Game.curr].score)+'</span>');
     return true;
   }
   else{

@@ -18,7 +18,7 @@ placeholder{
 }
 .ri{
     margin: 0 auto;
-    width: 400px;
+    width: 300px;
     color: #008800;
 }
 footer{
@@ -41,10 +41,16 @@ p{
     color: #000;
     text-align: center;
 }
+ul {
+    padding-left: 0rem;
+}
 li{
     margin: 5px;
     background-color: #aff;
     list-style-type: none;
+}
+li span{
+    float: right;
 }
 #canvas{
     margin: 0 auto;
