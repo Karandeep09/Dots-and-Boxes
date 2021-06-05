@@ -79,6 +79,7 @@ function setup() {
         }
     }
 }
+var flag = 1;
 function mousePressed()
 {
    if(sid != Game.curr)
@@ -89,9 +90,10 @@ function mousePressed()
        let h = key.split(" ");
        if( x >= +h[0] + 10 && x <= +h[2] - 10 && y >= +h[1] - 10 && y <= +h[1] + 10)
          {
-           if(horz[key] == 0){
+           if(horz[key] == 0 && flag == 1){
              socket.emit('horz',{h:h,sid:sid,key:key}); 
              horz[key] = 1;
+             flag = 0;
            }
          }
          
@@ -102,9 +104,10 @@ function mousePressed()
     if( y >= +v[3] + 10 && y <= +v[1] - 10 && x >= +v[0] - 10 && x <= +v[2] + 10)
          {
            //console.log(v[0],v[1],v[2],v[3]);
-           if(vert[key] == 0){ 
+           if(vert[key] == 0 && flag == 1){ 
                socket.emit('vert',{v:v,sid:sid,key:key});
                vert[key] = 1;
+               flag = 0;
            }
          }
          
@@ -120,6 +123,7 @@ function mousePressed()
     if(p | q){}
     else
     Game.next(Game.curr);
+    flag = 1;
     horz[data.key] = 1;
   });
   socket.on('vert',(data)=>{
@@ -132,6 +136,7 @@ function mousePressed()
     if(p | q){}
     else
     Game.next(Game.curr);
+    flag = 1;
     vert[data.key] = 1;
   }); 
 function draw() {
