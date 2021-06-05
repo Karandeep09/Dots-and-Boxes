@@ -70,6 +70,7 @@ function game(players)
   // }
   this.next = function(id){
     var next_id = Game.circular[id].next;
+    Game.curr = next_id;
     socket.emit('play',Game.circular[next_id]);
   }
   this.delete = function(id){
