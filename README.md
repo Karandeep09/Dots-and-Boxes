@@ -2,7 +2,7 @@
 An online multiplayer game supporting concept \
 of rooms which players can join or create to play the game
 ## Link
-[https://dotboxes.herokuapp.com/](https://dotboxes.herokuapp.com/)
+[https://dots-and-boxes-kur4.onrender.com/](https://dots-and-boxes-kur4.onrender.com/)
 ## Features:
 * Players can create or join room.
 * Multiplayer
